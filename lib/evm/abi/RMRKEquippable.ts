@@ -1478,4 +1478,4 @@ export const RMRKEquippable = [
     stateMutability: "nonpayable",
     type: "function",
   },
-] as cost;
+] as const;
