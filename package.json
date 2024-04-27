@@ -1,0 +1,38 @@
+{
+  "name": "rmrk-app-boilerplate-open",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@chakra-ui/react": "^2.8.2",
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
+    "@rainbow-me/rainbowkit": "^2.0.5",
+    "@rmrk-team/ipfs-utils": "^0.1.0",
+    "@rmrk-team/nft-renderer": "^0.2.1",
+    "@rmrk-team/rmrk-2d-renderer": "^0.1.1",
+    "@rmrk-team/rmrk-hooks": "^0.2.1",
+    "@tanstack/react-query": "^5.17.19",
+    "canvas": "^2.11.2",
+    "ethereum-blockies-base64": "^1.0.2",
+    "framer-motion": "^10.12.18",
+    "next": "^14.2.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "viem": "^2.9.16",
+    "wagmi": "^2.5.19"
+  },
+  "devDependencies": {
+    "@types/node": "^18.16.12",
+    "@types/react": "^18.2.6",
+    "eslint": "^8.15.0",
+    "eslint-config-next": "^13.4.3",
+    "prettier": "^2.8.8",
+    "typescript": "^5.0.4"
+  }
+}
