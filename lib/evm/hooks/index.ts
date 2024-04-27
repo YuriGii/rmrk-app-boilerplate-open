@@ -1,1 +1,1 @@
-export * from "./use-account-name";
+export * from "./use-ens-name";

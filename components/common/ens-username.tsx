@@ -1,5 +1,5 @@
 import React from "react";
-import { useAccountName } from "lib/evm/hooks";
+import { useEnsName } from "lib/evm/hooks";
 import { Box, BoxProps } from "@chakra-ui/react";
 import { shortenAccountId } from "lib/app/utils";
 import { getIsNullAddress } from "lib/evm/utils";
@@ -11,7 +11,7 @@ type Props = BoxProps & {
 };
 
 export const EnsUsername = ({ address, shorten, ...restProps }: Props) => {
-  const { accountName } = useAccountName({ address });
+  const { accountName } = useEnsName({ address });
   const username =
     accountName || (getIsNullAddress(address) ? "NullAddress" : address);
 

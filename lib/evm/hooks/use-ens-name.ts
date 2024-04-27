@@ -1,4 +1,4 @@
-import { useEnsName } from "wagmi";
+import { useEnsName as useEnsNameWagmi } from "wagmi";
 import { mainnet } from "viem/chains";
 import { Address } from "viem";
 
@@ -7,10 +7,10 @@ type Props = {
   enabled?: boolean;
 };
 
-export const useAccountName = ({ address, enabled }: Props) => {
+export const useEnsName = ({ address, enabled }: Props) => {
   const chainId = mainnet.id;
 
-  const { data: accountName, refetch } = useEnsName({
+  const { data: accountName, refetch } = useEnsNameWagmi({
     address,
     chainId,
     query: {
