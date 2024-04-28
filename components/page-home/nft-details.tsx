@@ -15,8 +15,10 @@ import { Address } from "viem";
 import {
   useRmrkEquippableChildrenOf,
   useRmrkEquippableDirectOwnerOf,
+  useRmrkEquippableTokenURI,
 } from "lib/evm/hooks/rmrk-equippable";
 import { EnsUsername } from "components/common/ens-username";
+import { useFetchIpfsMetadata } from "@rmrk-team/rmrk-hooks";
 
 type Props = {
   network: EVM_NETWORK_KEYS;
@@ -30,11 +32,20 @@ export const NftDetails = ({ network, collectionId, tokenId }: Props) => {
     collectionId,
     tokenId,
   });
+
   const { childrenOf } = useRmrkEquippableChildrenOf({
     network,
     collectionId,
     tokenId,
   });
+
+  const { tokenURI } = useRmrkEquippableTokenURI({
+    network,
+    collectionId,
+    tokenId,
+  });
+
+  const { data: metadata } = useFetchIpfsMetadata({ metadataUri: tokenURI });
 
   return (
     <Card data-name={"nft-details"}>
@@ -43,6 +54,14 @@ export const NftDetails = ({ network, collectionId, tokenId }: Props) => {
       </CardHeader>
       <CardBody>
         <Stack divider={<StackDivider />} spacing={"4"}>
+          <Box>
+            <Heading size={"xs"} textTransform={"uppercase"}>
+              Name
+            </Heading>
+            <Text pt={"2"} fontSize={"sm"}>
+              {metadata?.name}
+            </Text>
+          </Box>
           <Box>
             <Heading size={"xs"} textTransform={"uppercase"}>
               Token ID
