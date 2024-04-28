@@ -5,6 +5,7 @@ import { EVM_RMRK_CONTRACTS } from "lib/evm/constants";
 import { NftRenderer } from "components/common/nft-renderer";
 import { EVM_NETWORK_KEYS } from "lib/app/network-protocol-mapping";
 import { getActiveChainFromNetworkKey } from "lib/evm/utils";
+import { CollectionDetails } from "components/page-home/collection-details";
 
 const MockLoadData = {
   network: EVM_NETWORK_KEYS.base,
@@ -27,6 +28,10 @@ export const PageHome = () => (
           }
         />
       </Box>
+      <CollectionDetails
+        network={MockLoadData.network}
+        collectionId={MockLoadData.collectionId}
+      />
     </VStack>
   </Page>
 );
