@@ -1,5 +1,5 @@
 import React from "react";
-import { VStack, Flex, Box, HStack } from "@chakra-ui/react";
+import { Box, Flex, HStack, VStack } from "@chakra-ui/react";
 import { Page } from "components/app/page";
 import { EVM_RMRK_CONTRACTS } from "lib/evm/constants";
 import { NftRenderer } from "components/common/nft-renderer";

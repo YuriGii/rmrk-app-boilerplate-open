@@ -2,13 +2,13 @@
 import React from "react";
 import {
   Box,
-  Heading,
   Card,
-  CardHeader,
   CardBody,
+  CardHeader,
+  Heading,
   Stack,
-  Text,
   StackDivider,
+  Text,
 } from "@chakra-ui/react";
 import { EVM_NETWORK_KEYS } from "lib/app/network-protocol-mapping";
 import { Address } from "viem";

@@ -2,9 +2,9 @@ import { connectorsForWallets } from "@rainbow-me/rainbowkit";
 import {
   coinbaseWallet,
   metaMaskWallet,
-  talismanWallet,
   rainbowWallet,
   subWallet,
+  talismanWallet,
 } from "@rainbow-me/rainbowkit/wallets";
 
 const appName = "RMRK boilerplate";
