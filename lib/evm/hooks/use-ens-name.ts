@@ -7,15 +7,14 @@ type Props = {
   enabled?: boolean;
 };
 
-export const useEnsName = ({ address, enabled }: Props) => {
+export const useEnsName = ({ address, enabled = true }: Props) => {
   const chainId = mainnet.id;
+  const isEnabled = enabled && !!address && !!chainId;
 
   const { data: accountName, refetch } = useEnsNameWagmi({
     address,
     chainId,
-    query: {
-      enabled: enabled && !!address,
-    },
+    query: { enabled: isEnabled },
   });
 
   return {

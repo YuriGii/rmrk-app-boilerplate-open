@@ -16,6 +16,7 @@ import {
   useRmrkEquippableChildrenOf,
   useRmrkEquippableDirectOwnerOf,
 } from "lib/evm/hooks/rmrk-equippable";
+import { EnsUsername } from "components/common/ens-username";
 
 type Props = {
   network: EVM_NETWORK_KEYS;
@@ -54,9 +55,11 @@ export const NftDetails = ({ network, collectionId, tokenId }: Props) => {
             <Heading size="xs" textTransform="uppercase">
               Owner
             </Heading>
-            <Text pt="2" fontSize="sm">
-              {directOwnerOf}
-            </Text>
+            {directOwnerOf && (
+              <Text pt="2" fontSize="sm">
+                <EnsUsername address={directOwnerOf[0]} />
+              </Text>
+            )}
           </Box>
           <Box>
             <Heading size="xs" textTransform="uppercase">
