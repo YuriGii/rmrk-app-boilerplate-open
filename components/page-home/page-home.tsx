@@ -7,6 +7,7 @@ import { EVM_NETWORK_KEYS } from "lib/app/network-protocol-mapping";
 import { getActiveChainFromNetworkKey } from "lib/evm/utils";
 import { CollectionDetails } from "components/page-home/collection-details";
 import { NftDetails } from "components/page-home/nft-details";
+import { Inventory } from "components/page-home/inventory";
 
 const MockLoadData = {
   network: EVM_NETWORK_KEYS.base,
@@ -15,9 +16,9 @@ const MockLoadData = {
 };
 
 export const PageHome = () => (
-  <Page data-name="page-home">
+  <Page data-name="page-home" py={20}>
     <VStack align={"center"} justify={"center"} w={"100%"} h={"100vh"} gap={10}>
-      <Box w={"500px"} h={"500px"}>
+      <Box w={"500px"} h={"500px"} flexShrink={0}>
         <NftRenderer
           chainId={getActiveChainFromNetworkKey(MockLoadData.network).id}
           contractAddress={MockLoadData.collectionId}
@@ -40,6 +41,11 @@ export const PageHome = () => (
           tokenId={MockLoadData.tokenId}
         />
       </HStack>
+      <Inventory
+        network={MockLoadData.network}
+        collectionId={MockLoadData.collectionId}
+        tokenId={MockLoadData.tokenId}
+      />
     </VStack>
   </Page>
 );
