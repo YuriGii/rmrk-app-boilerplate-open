@@ -1,11 +1,12 @@
 import React from "react";
-import { VStack, Flex, Box } from "@chakra-ui/react";
+import { VStack, Flex, Box, HStack } from "@chakra-ui/react";
 import { Page } from "components/app/page";
 import { EVM_RMRK_CONTRACTS } from "lib/evm/constants";
 import { NftRenderer } from "components/common/nft-renderer";
 import { EVM_NETWORK_KEYS } from "lib/app/network-protocol-mapping";
 import { getActiveChainFromNetworkKey } from "lib/evm/utils";
 import { CollectionDetails } from "components/page-home/collection-details";
+import { NftDetails } from "components/page-home/nft-details";
 
 const MockLoadData = {
   network: EVM_NETWORK_KEYS.base,
@@ -28,10 +29,17 @@ export const PageHome = () => (
           }
         />
       </Box>
-      <CollectionDetails
-        network={MockLoadData.network}
-        collectionId={MockLoadData.collectionId}
-      />
+      <HStack gap={10}>
+        <CollectionDetails
+          network={MockLoadData.network}
+          collectionId={MockLoadData.collectionId}
+        />
+        <NftDetails
+          network={MockLoadData.network}
+          collectionId={MockLoadData.collectionId}
+          tokenId={MockLoadData.tokenId}
+        />
+      </HStack>
     </VStack>
   </Page>
 );
