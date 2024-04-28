@@ -35,41 +35,41 @@ export const CollectionDetails = ({ network, collectionId }: Props) => {
   });
 
   return (
-    <Card data-name="collection-details">
+    <Card data-name={"collection-details"}>
       <CardHeader>
-        <Heading size="md">Collection Details</Heading>
+        <Heading size={"md"}>Collection Details</Heading>
       </CardHeader>
       <CardBody>
-        <Stack divider={<StackDivider />} spacing="4">
+        <Stack divider={<StackDivider />} spacing={"4"}>
           <Box>
-            <Heading size="xs" textTransform="uppercase">
+            <Heading size={"xs"} textTransform={"uppercase"}>
               Name
             </Heading>
-            <Text pt="2" fontSize="sm">
+            <Text pt={"2"} fontSize={"sm"}>
               {name}
             </Text>
           </Box>
           <Box>
-            <Heading size="xs" textTransform="uppercase">
+            <Heading size={"xs"} textTransform={"uppercase"}>
               ID
             </Heading>
-            <Text pt="2" fontSize="sm">
-              {network}-{collectionId}
+            <Text pt={"2"} fontSize={"sm"}>
+              {collectionId}
             </Text>
           </Box>
           <Box>
-            <Heading size="xs" textTransform="uppercase">
+            <Heading size={"xs"} textTransform={"uppercase"}>
               Max Supply
             </Heading>
-            <Text pt="2" fontSize="sm">
+            <Text pt={"2"} fontSize={"sm"}>
               {Number(maxSupply)}
             </Text>
           </Box>
           <Box>
-            <Heading size="xs" textTransform="uppercase">
+            <Heading size={"xs"} textTransform={"uppercase"}>
               Total Supply
             </Heading>
-            <Text pt="2" fontSize="sm">
+            <Text pt={"2"} fontSize={"sm"}>
               {Number(totalSupply)}
             </Text>
           </Box>

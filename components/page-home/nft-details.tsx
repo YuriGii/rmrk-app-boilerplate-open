@@ -37,35 +37,35 @@ export const NftDetails = ({ network, collectionId, tokenId }: Props) => {
   });
 
   return (
-    <Card data-name="nft-details">
+    <Card data-name={"nft-details"}>
       <CardHeader>
-        <Heading size="md">NFT Details</Heading>
+        <Heading size={"md"}>NFT Details</Heading>
       </CardHeader>
       <CardBody>
-        <Stack divider={<StackDivider />} spacing="4">
+        <Stack divider={<StackDivider />} spacing={"4"}>
           <Box>
-            <Heading size="xs" textTransform="uppercase">
+            <Heading size={"xs"} textTransform={"uppercase"}>
               Token ID
             </Heading>
-            <Text pt="2" fontSize="sm">
+            <Text pt={"2"} fontSize={"sm"}>
               {Number(tokenId)}
             </Text>
           </Box>
           <Box>
-            <Heading size="xs" textTransform="uppercase">
+            <Heading size={"xs"} textTransform={"uppercase"}>
               Owner
             </Heading>
             {directOwnerOf && (
-              <Text pt="2" fontSize="sm">
+              <Text pt={"2"} fontSize={"sm"}>
                 <EnsUsername address={directOwnerOf[0]} />
               </Text>
             )}
           </Box>
           <Box>
-            <Heading size="xs" textTransform="uppercase">
+            <Heading size={"xs"} textTransform={"uppercase"}>
               NFTs in inventory
             </Heading>
-            <Text pt="2" fontSize="sm">
+            <Text pt={"2"} fontSize={"sm"}>
               {childrenOf?.length}
             </Text>
           </Box>
