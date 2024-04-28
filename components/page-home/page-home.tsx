@@ -16,7 +16,7 @@ const MockLoadData = {
 
 export const PageHome = () => (
   <Page data-name="page-home">
-    <VStack align={"center"} justify={"center"} w={"100%"} h={"100vh"}>
+    <VStack align={"center"} justify={"center"} w={"100%"} h={"100vh"} gap={10}>
       <Box w={"500px"} h={"500px"}>
         <NftRenderer
           chainId={getActiveChainFromNetworkKey(MockLoadData.network).id}
@@ -29,7 +29,7 @@ export const PageHome = () => (
           }
         />
       </Box>
-      <HStack gap={10}>
+      <HStack gap={10} align={"flex-start"}>
         <CollectionDetails
           network={MockLoadData.network}
           collectionId={MockLoadData.collectionId}

@@ -1,9 +1,21 @@
 "use client";
 import React from "react";
-import { Box, Heading, VStack } from "@chakra-ui/react";
+import {
+  Box,
+  Card,
+  CardBody,
+  CardHeader,
+  Heading,
+  Stack,
+  StackDivider,
+  Text,
+} from "@chakra-ui/react";
 import { EVM_NETWORK_KEYS } from "lib/app/network-protocol-mapping";
 import { Address } from "viem";
-import { useRmrkEquippableDirectOwnerOf } from "lib/evm/hooks/rmrk-equippable/use-rmrk-equippable-direct-owner-of";
+import {
+  useRmrkEquippableChildrenOf,
+  useRmrkEquippableDirectOwnerOf,
+} from "lib/evm/hooks/rmrk-equippable";
 
 type Props = {
   network: EVM_NETWORK_KEYS;
@@ -17,12 +29,45 @@ export const NftDetails = ({ network, collectionId, tokenId }: Props) => {
     collectionId,
     tokenId,
   });
+  const { childrenOf } = useRmrkEquippableChildrenOf({
+    network,
+    collectionId,
+    tokenId,
+  });
 
   return (
-    <VStack data-name="nft-details">
-      <Heading as={"h4"}>NFT Details</Heading>
-      <Box>token id: {Number(tokenId)}</Box>
-      <Box>owner: {directOwnerOf}</Box>
-    </VStack>
+    <Card data-name="nft-details">
+      <CardHeader>
+        <Heading size="md">NFT Details</Heading>
+      </CardHeader>
+      <CardBody>
+        <Stack divider={<StackDivider />} spacing="4">
+          <Box>
+            <Heading size="xs" textTransform="uppercase">
+              Token ID
+            </Heading>
+            <Text pt="2" fontSize="sm">
+              {Number(tokenId)}
+            </Text>
+          </Box>
+          <Box>
+            <Heading size="xs" textTransform="uppercase">
+              Owner
+            </Heading>
+            <Text pt="2" fontSize="sm">
+              {directOwnerOf}
+            </Text>
+          </Box>
+          <Box>
+            <Heading size="xs" textTransform="uppercase">
+              NFTs in inventory
+            </Heading>
+            <Text pt="2" fontSize="sm">
+              {childrenOf?.length}
+            </Text>
+          </Box>
+        </Stack>
+      </CardBody>
+    </Card>
   );
 };
