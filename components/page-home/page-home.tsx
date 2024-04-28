@@ -17,30 +17,32 @@ const MockLoadData = {
 
 export const PageHome = () => (
   <Page data-name="page-home" py={20}>
-    <VStack align={"center"} justify={"center"} w={"100%"} h={"100vh"} gap={10}>
-      <Box w={"500px"} h={"500px"} flexShrink={0}>
-        <NftRenderer
-          chainId={getActiveChainFromNetworkKey(MockLoadData.network).id}
-          contractAddress={MockLoadData.collectionId}
-          tokenId={MockLoadData.tokenId}
-          loader={
-            <Flex align={"center"} justify={"center"}>
-              Loading...
-            </Flex>
-          }
-        />
-      </Box>
-      <HStack gap={10} align={"flex-start"}>
-        <CollectionDetails
-          network={MockLoadData.network}
-          collectionId={MockLoadData.collectionId}
-        />
-        <NftDetails
-          network={MockLoadData.network}
-          collectionId={MockLoadData.collectionId}
-          tokenId={MockLoadData.tokenId}
-        />
-      </HStack>
+    <VStack gap={10}>
+      <Flex gap={10} direction={["column", "row"]}>
+        <Box flexShrink={0} w={"800px"} h={"800px"}>
+          <NftRenderer
+            chainId={getActiveChainFromNetworkKey(MockLoadData.network).id}
+            contractAddress={MockLoadData.collectionId}
+            tokenId={MockLoadData.tokenId}
+            loader={
+              <Flex align={"center"} justify={"center"}>
+                Loading...
+              </Flex>
+            }
+          />
+        </Box>
+        <VStack gap={10}>
+          <CollectionDetails
+            network={MockLoadData.network}
+            collectionId={MockLoadData.collectionId}
+          />
+          <NftDetails
+            network={MockLoadData.network}
+            collectionId={MockLoadData.collectionId}
+            tokenId={MockLoadData.tokenId}
+          />
+        </VStack>
+      </Flex>
       <Inventory
         network={MockLoadData.network}
         collectionId={MockLoadData.collectionId}

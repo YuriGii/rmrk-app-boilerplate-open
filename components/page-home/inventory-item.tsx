@@ -1,14 +1,5 @@
 import React from "react";
-import {
-  Box,
-  Card,
-  CardBody,
-  Image,
-  Stack,
-  Heading,
-  Text,
-  Divider,
-} from "@chakra-ui/react";
+import { Card, CardBody, Heading, Image, Stack, Text } from "@chakra-ui/react";
 import { EVM_NETWORK_KEYS } from "lib/app/network-protocol-mapping";
 import { Address } from "viem";
 import { useRmrkEquippableTokenURI } from "lib/evm/hooks/rmrk-equippable";

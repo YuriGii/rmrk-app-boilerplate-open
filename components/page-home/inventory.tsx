@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { Box, Flex, Heading, SimpleGrid } from "@chakra-ui/react";
+import { Flex, Heading, SimpleGrid } from "@chakra-ui/react";
 import { EVM_NETWORK_KEYS } from "lib/app/network-protocol-mapping";
 import { Address } from "viem";
 import { useRmrkEquippableChildrenOf } from "lib/evm/hooks/rmrk-equippable";

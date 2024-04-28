@@ -35,7 +35,7 @@ export const CollectionDetails = ({ network, collectionId }: Props) => {
   });
 
   return (
-    <Card data-name={"collection-details"}>
+    <Card data-name={"collection-details"} w={"100%"}>
       <CardHeader>
         <Heading size={"md"}>Collection Details</Heading>
       </CardHeader>
